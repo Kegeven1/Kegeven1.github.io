@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Clock</title>
+  <style>
+    /* Set the background image using a relative file path */
+    body {
+      background-image: url('wallhaven-1pxv11.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    /* Move the clock slightly to the right */
+    #clock {
+      font-size: 100px;
+      text-align: right;
+      margin-top: 400px;
+      margin-right: 160px;
+      color: red;
+      font-family: "Roboto", "Arial", sans-serif;
+      font-weight: bold; /* Make the text bold */
+    }
+
+    /* Create a container for the Discord link and image */
+    #discord-container {
+      text-align: right; /* Align the content to the right */
+      margin-right: 20px; /* Add right margin to move to the right */
+      margin-top: 380px; /* Add top margin for spacing */
+    }
+
+    /* Style for the Discord image */
+    #discord-image {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    /* Style for the Discord link */
+    #discord-link {
+      font-size: 35px;
+    }
+
+       /* Move the audio player to the top-right corner */
+       audio {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      /* Add your custom styles for the audio player here */
+      background-color: #c543cf; /* Change the background color */
+      color: rgb(146, 24, 24); /* Change text color */
+      width: 300px; /* Set the width */
+      padding: 10px; /* Add padding */
+      border: 0px solid #666; /* Add a border */
+      border-radius: 5px; /* Add rounded corners */
+      box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3); /* Add a box shadow */
+    }
+  </style>
+</head>
+<body>
+  <div id="clock">
+    
+  </div>
+
+  <!-- Embed an audio player -->
+  <audio controls loop>
+    <source src="letsgo.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Move the Discord image and link to the right -->
+  <div id="discord-container">
+    <img id="discord-image" src="discord-icon-512x512-xtx725no.png" alt="Discord Icon">
+    <a id="discord-link" href="https://discord.gg/YHPSKgRaNZ" target="_blank">Join me on Discord</a>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString();
+      document.getElementById('clock').textContent = time;
+    }
+
+    setInterval(updateClock, 1000);
+
+  </script>
+</body>
+</html>
